@@ -25,11 +25,12 @@ package com.saptar.gfg.dq;
 
 import java.util.Arrays;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class FindZero {
 
 	public static void main(String[] args) {
-		
+		long startTime = System.currentTimeMillis();
 		Scanner scan = new Scanner(System.in);
 		int testCases = scan.nextInt();
 		while(testCases>0){
@@ -45,6 +46,9 @@ public class FindZero {
 					((firstZero>=0)?(arr.length - firstZero):0));
 		}
 		scan.close();
+		long endTime   = System.currentTimeMillis();
+		long totalTime = endTime - startTime;
+		System.out.println(TimeUnit.MILLISECONDS.toSeconds(totalTime));
 		
 
 	}
