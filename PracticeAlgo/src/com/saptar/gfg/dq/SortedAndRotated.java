@@ -63,3 +63,10 @@ public class SortedAndRotated {
 	}
 
 }
+
+/**
+ * The crux of the problem is to find out the condition where to look for right
+ * or left half of the array. In this case it is to check if the mid is greater
+ * than the last element as this is only possible if the array has been rotated
+ * at a point after the mid. Code works for ascendingly sorted array.
+ */
