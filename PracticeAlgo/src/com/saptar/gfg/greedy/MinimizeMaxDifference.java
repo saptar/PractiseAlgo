@@ -25,7 +25,7 @@ public class MinimizeMaxDifference {
 			}
 			int offset = scan.nextInt();
 			int result = findMin(arr, elements, offset);
-			System.out.println(result);
+			System.out.println("Min difference " + result);
 		}
 		scan.close();
 
@@ -35,7 +35,7 @@ public class MinimizeMaxDifference {
 		// sort the array
 		Arrays.sort(arr);
 		int temp[] = new int[arr_length];
-		System.out.println(Arrays.toString(arr));
+		System.out.println("Original sorted array " + Arrays.toString(arr));
 		// base case
 		// if offset is greater than or equal to the difference between
 		// the max and the min in the array then simply do add/subtract
@@ -44,6 +44,7 @@ public class MinimizeMaxDifference {
 			for (int i = 0; i < arr_length; i++) {
 				temp[i] = arr[i] - offset;
 			}
+			System.out.println("Modified array " + Arrays.toString(temp));
 			return temp[arr_length - 1] - temp[0];
 		}
 		// add offset to min and subtract from max
@@ -64,7 +65,7 @@ public class MinimizeMaxDifference {
 		}
 		// sort the temp Array
 		Arrays.sort(temp);
-		System.out.println(Arrays.toString(temp));
+		System.out.println("Modified array " + Arrays.toString(temp));
 		return temp[arr_length - 1] - temp[0];
 	}
 }
