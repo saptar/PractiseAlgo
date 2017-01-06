@@ -59,7 +59,7 @@ public class EditDistance {
 			return ED(str1, str2, m - 1, n - 1);
 		} else {
 			// case when the char don't match
-			// figure out if we shoud remove or insert
+			// figure out if we should remove or insert
 			// replace is possible for all cases
 
 			char[] temp_char_arr = {};
