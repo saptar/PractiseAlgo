@@ -15,11 +15,12 @@ package com.saptar.gfg.dynamic;
 public class CoinChange {
 
 	public static void main(String[] args) {
-		int arr[] = { 2, 5, 3, 6 };
-		int amt = 10;
+		int arr[] = { 1, 2, 3 };
+		int amt = 4;
 		int[][] map = new int[arr.length + 1][amt + 1];
 		long startTime = System.nanoTime();
 		int result = cc(arr, arr.length, amt, map);
+		// int result = coinChangeRecursive(arr, 0, amt);
 		long endTime = System.nanoTime();
 
 		long duration = (endTime - startTime) / 100000;
@@ -29,8 +30,7 @@ public class CoinChange {
 		long endTime1 = System.nanoTime();
 
 		long duration1 = (endTime1 - startTime1) / 100000;
-		// map<left sum, left coins>
-
+		// map<left sum, left coins>//
 		System.out.println(result1 + " " + result + " duration " + " "
 				+ duration1 + " " + duration);
 
@@ -84,4 +84,25 @@ public class CoinChange {
 		return dp[m][n];
 	}
 
+	// another recursive approach much like the previous one.
+	private static int coinChangeRecursive(int[] coins, int start, int amount) {
+		if (coins.length == 1 && coins[0] == 0) {
+			// we cannot form the sum
+			return 0;
+		}
+		if (amount == 0) {
+			return 1;
+		}
+		if (amount < 0) {
+
+			return 0;
+		}
+		int result1 = 0;
+		// loop through the set of coins and choise the ith coin
+		for (int i = 0; i < coins.length - start; i++) {
+			result1 += coinChangeRecursive(coins, start + i, amount
+					- coins[start + i]);
+		}
+		return result1;
+	}
 }

@@ -1,3 +1,8 @@
+/**
+ * Palindrome partiotioning
+ * details: http://www.geeksforgeeks.org/dynamic-programming-set-17-palindrome-partitioning/
+ */
+
 package com.saptar.gfg.dynamic;
 
 import java.util.Arrays;

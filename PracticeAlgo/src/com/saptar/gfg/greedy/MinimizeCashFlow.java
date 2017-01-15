@@ -1,5 +1,10 @@
-package com.saptar.gfg.greedy;
+/**
+ * Minimize Cash Flow among a given set of friends who have borrowed money from each other
+ * Given a number of friends who have to give or take some amount of money from one another. 
+ * Design an algorithm by which the total cash flow among all the friends is minimized.
+ */
 
+package com.saptar.gfg.greedy;
 
 public class MinimizeCashFlow {
 	public static final int PERSON = 3;

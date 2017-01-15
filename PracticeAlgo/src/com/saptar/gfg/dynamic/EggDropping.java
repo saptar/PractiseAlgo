@@ -37,13 +37,13 @@ public class EggDropping {
 		}
 		int min = Integer.MAX_VALUE - 1;
 		for (int k = 1; k <= floors; k++) {
-			int temp = Math.max(minTrials(eggs - 1, k - 1, dp),
+			int temp = 1 + Math.max(minTrials(eggs - 1, k - 1, dp),
 					minTrials(eggs, floors - k, dp));
 			if (temp < min) {
 				min = temp;
 			}
 		}
-		dp[eggs][floors] = min + 1;
+		dp[eggs][floors] = min;
 		return dp[eggs][floors];
 
 	}

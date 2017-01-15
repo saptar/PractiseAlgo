@@ -46,7 +46,7 @@ public class MinJumps {
 			return Integer.MAX_VALUE - 1;
 		}
 		if (arr[start] == 0) {
-			// cannot go further, requires infite hops
+			// cannot go further, requires infnite hops
 
 			return Integer.MAX_VALUE - 1;
 		}
